@@ -21,9 +21,14 @@ public class MainActivity extends AppCompatActivity {
         TextView tvSum = findViewById(R.id.sum);
         String strA = eta.getText().toString();
         String strB = etb.getText().toString();
-        double a = Double.parseDouble(strA);
-        double b = Double.parseDouble(strB);
-        String sum = Double.toString(a + b);
-        tvSum.setText(sum);
+        if(strA.isEmpty() || strB.isEmpty()){
+            tvSum.setText("Поле ссумирования не может быть пустым!");
+        }
+        else{
+            double a = Double.parseDouble(strA);
+            double b = Double.parseDouble(strB);
+            String sum = Double.toString(a + b);
+            tvSum.setText(sum);
+        }
     }
 }
